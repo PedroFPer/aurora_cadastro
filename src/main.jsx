@@ -7,7 +7,7 @@ import { createRoot } from 'react-dom/client'
 
 import './styles/headerStyle.css'
 
-import TelaCadastro from './pages/TelaCadastro'
+import TelaCadastro from './pages/RegistrationPage'
 
 
 
