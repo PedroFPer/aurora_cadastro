@@ -1,4 +1,4 @@
-export default function RegitrationForm() {
+export default function RegistrationForm () {
     return <form>
         <div class="mb-3">
             <label for="inputName" class="form-label">Digite seu nome:</label>

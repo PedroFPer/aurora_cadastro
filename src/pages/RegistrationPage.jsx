@@ -3,7 +3,7 @@ import MainRegistrationContainer from "../components/registrationPageComponents/
 import Footer from "../components/generalComponents/Footer"
 
 export default function RegistrationPage(){
-    return <div>
+    return <div className="registration_page_container" >
         <Header />
         <MainRegistrationContainer /> 
         <Footer />
