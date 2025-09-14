@@ -56,7 +56,7 @@
 
 .input_control {
     border: 1px solid black;
-    width: 15em;
+    width: 16em;
 }
 
 .inputGroup {
@@ -83,6 +83,11 @@
     padding: 1rem 2rem;
     font-size: 1.1em;
     border-radius: 0.5rem;
+}
+
+#input_password{
+    display: flex;
+    flex-direction: row;
 }
 
 #header_list {
