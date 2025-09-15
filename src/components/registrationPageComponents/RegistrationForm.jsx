@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { Eye, EyeSlash } from "react-bootstrap-icons";
-import validateForm from "../../infrastructure/handleSubmit";
+import handleSubmitForm from "../../infrastructure/handleSubmitForm"
 import { formatInput } from "../../infrastructure/formatInput"
 
 export default function RegistrationForm() {
     const [showPassword, setShowPassword] = useState(false);
     const [showVerifyPassword, setShowVerifyPassword] = useState(false);
+    const [errors, setErrors] = useState({});
     const [formData, setFormData] = useState({
         name: "",
         lastName: "",
@@ -17,41 +18,8 @@ export default function RegistrationForm() {
         verifyPassword: ""
     });
 
-    const [errors, setErrors] = useState({});
-
-    const handleSubmitForm = (e) => {
-        e.preventDefault();
-
-        const validationErrors = validateForm(formData);
-        setErrors(validationErrors);
-
-        if (Object.keys(validationErrors).length === 0) {
-            const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
-            existingUsers.push(formData);
-            localStorage.setItem("users", JSON.stringify(existingUsers));
-
-            alert("Formulário enviado com sucesso ✅");
-            console.log("Dados enviados:", formData);
-
-            setFormData({
-                name: "",
-                lastName: "",
-                cpf: "",
-                phone: "",
-                email: "",
-                verifyEmail: "",
-                password: "",
-                verifyPassword: ""
-            });
-
-            setErrors({});
-
-            window.location.reload();
-        }
-    };
-
     return (
-        <form id="registrationForm" onSubmit={handleSubmitForm}>
+        <form id="registrationForm" onSubmit={(e) => handleSubmitForm(formData, setFormData, setErrors, e)}>
             <h2>Crie uma nova conta</h2>
 
             <div className="inputGroup">
