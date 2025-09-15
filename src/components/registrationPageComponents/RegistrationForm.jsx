@@ -111,7 +111,7 @@ export default function RegistrationForm() {
             <div className="inputGroup">
                 <div>
                     <label htmlFor="inputPassword" className="form-label">Digite a sua senha:</label>
-                    <div className="input_password input-group mb-3">
+                    <div className="input_password input-group">
                         <input
                             type={showPassword ? "text" : "password"}
                             className="form-control input_control"
@@ -134,7 +134,7 @@ export default function RegistrationForm() {
 
                 <div>
                     <label htmlFor="inputVerifyPassword" className="form-label">Digite novamente sua senha:</label>
-                    <div className="input_password input-group mb-3">
+                    <div className="input_password input-group">
                         <input
                             type={showVerifyPassword ? "text" : "password"}
                             className="form-control input_control"
