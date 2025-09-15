@@ -29,7 +29,7 @@ export default function RegistrationForm() {
                         type="text"
                         className="form-control input_control"
                         id="inputName"
-                        placeholder="João"
+                        placeholder="Jefté"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     />
@@ -42,7 +42,7 @@ export default function RegistrationForm() {
                         type="text"
                         className="form-control input_control"
                         id="inputLastName"
-                        placeholder="Joaninha"
+                        placeholder="Goes"
                         value={formData.lastName}
                         onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
                     />
@@ -87,7 +87,7 @@ export default function RegistrationForm() {
                         type="email"
                         className="form-control input_control"
                         id="inputEmail"
-                        placeholder="JoaoJoaninha@email.com"
+                        placeholder="JeftéGoes@email.com"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     />
@@ -100,7 +100,7 @@ export default function RegistrationForm() {
                         type="email"
                         className="form-control input_control"
                         id="inputVerifyEmail"
-                        placeholder="JoaoJoaninha@email.com"
+                        placeholder="JeftéGoes@email.com"
                         value={formData.verifyEmail}
                         onChange={(e) => setFormData({ ...formData, verifyEmail: e.target.value })}
                     />
