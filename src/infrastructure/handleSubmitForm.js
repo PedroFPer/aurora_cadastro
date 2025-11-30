@@ -12,7 +12,7 @@ export default function handleSubmitForm(formData, setFormData,setErrors,e) {
         localStorage.setItem("users", JSON.stringify(existingUsers));
 
         alert("Formulário enviado com sucesso ✅");
-        console.log("Dados enviados:", formData);
+        console.info("Dados enviados:", formData);
 
         setFormData({
             name: "",

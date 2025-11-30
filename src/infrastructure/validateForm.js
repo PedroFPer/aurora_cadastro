@@ -1,4 +1,6 @@
-export default function validateForm(formData) {
+import validateCpf from "./validateCpf";
+import validateEmail from "./validateEmail";
+ export default function validateForm(formData) {
   const errors = {};
 
   if (!formData.name) {
@@ -11,8 +13,8 @@ export default function validateForm(formData) {
 
   if (!formData.cpf) {
     errors.cpf = "*Campo Obrigatorio";
-  } else if (formData.cpf.replace(/\D/g, "").length !== 11) {
-    errors.cpf = "*O CPF deve conter 11 números.";
+  } else if (!validateCpf(formData.cpf)) {
+    errors.cpf = "*CPF inválido.";
   }
 
   if (!formData.phone) {
@@ -23,6 +25,8 @@ export default function validateForm(formData) {
 
   if (!formData.email) {
     errors.email = "*Campo Obrigatorio";
+  } else if (!validateEmail(formData.email)) {
+    errors.email = "*Formato de email inválido.";
   }
 
   if (!formData.verifyEmail) {
@@ -33,8 +37,8 @@ export default function validateForm(formData) {
 
   if (!formData.password) {
     errors.password = "*Campo Obrigatorio";
-  } else if (formData.password.length < 6) {
-    errors.password = "*A senha deve conter pelo menos 6 caracteres.";
+  } else if (formData.password.length < 8) {
+    errors.password = "*A senha deve conter pelo menos 8 caracteres.";
   }
 
   if (!formData.verifyPassword) {
@@ -42,6 +46,5 @@ export default function validateForm(formData) {
   } else if (formData.password !== formData.verifyPassword) {
     errors.verifyPassword = "*As senhas não coincidem.";
   }
-
   return errors;
 }
