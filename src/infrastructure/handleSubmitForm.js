@@ -11,7 +11,7 @@ export default function handleSubmitForm(formData, setFormData,setErrors,e) {
         existingUsers.push(formData);
         localStorage.setItem("users", JSON.stringify(existingUsers));
 
-        alert("Formulário enviado com sucesso ✅");
+        //alert("Formulário enviado com sucesso ✅");
         console.info("Dados enviados:", formData);
 
         setFormData({
@@ -26,7 +26,8 @@ export default function handleSubmitForm(formData, setFormData,setErrors,e) {
         });
 
         setErrors({});
-
+        
         window.location.reload();
+
     }
 }

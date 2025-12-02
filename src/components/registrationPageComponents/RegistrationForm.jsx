@@ -19,7 +19,7 @@ export default function RegistrationForm() {
     });
 
     return (
-        <form id="registrationForm" onSubmit={(e) => handleSubmitForm(formData, setFormData, setErrors, e)}>
+        <form id="registrationForm" onSubmit={(e) => handleSubmitForm(formData, setFormData, setErrors, e)} noValidate>
             <h2>Crie uma nova conta</h2>
 
             <div className="inputGroup">
